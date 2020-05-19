@@ -1,3 +1,5 @@
+package br.com.claudiogalvao.bytebank.testes
+
 fun testaCondicoes(saldo: Double) {
     if (saldo > 0.0) {
         println("conta é positiva")

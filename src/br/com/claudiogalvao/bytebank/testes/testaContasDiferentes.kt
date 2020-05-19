@@ -1,11 +1,22 @@
+package br.com.claudiogalvao.bytebank.testes
+
+import br.com.claudiogalvao.bytebank.modelo.Cliente
+import br.com.claudiogalvao.bytebank.modelo.Conta
+import br.com.claudiogalvao.bytebank.modelo.ContaCorrente
+import br.com.claudiogalvao.bytebank.modelo.ContaPoupanca
+
 fun testaContasDiferentes() {
+
+    val alex = Cliente("Alex", "111.111.111-11", 1234)
+    val fran = Cliente("Fran", "222.222.222-22", 1234)
+
     val contaCorrente = ContaCorrente(
-            "Alex",
+            alex,
             1000
     )
 
     val contaPoupanca = ContaPoupanca(
-            "Fran",
+            fran,
             1001
     )
 

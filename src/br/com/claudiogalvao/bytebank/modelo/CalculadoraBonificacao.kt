@@ -1,3 +1,5 @@
+package br.com.claudiogalvao.bytebank.modelo
+
 class CalculadoraBonificacao {
 
     var total: Double = 0.0
@@ -7,11 +9,11 @@ class CalculadoraBonificacao {
         this.total += funcionario.bonificacao
     }
 
-//    fun registra(gerente: Gerente) {
+//    fun registra(gerente: br.com.claudiogalvao.bytebank.modelo.Gerente) {
 //        this.total += gerente.bonificacao
 //    }
 //
-//    fun registra(diretor: Diretor) {
+//    fun registra(diretor: br.com.claudiogalvao.bytebank.modelo.Diretor) {
 //        this.total += diretor.bonificacao
 //    }
 }

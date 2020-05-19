@@ -1,3 +1,5 @@
+package br.com.claudiogalvao.bytebank.modelo
+
 class SistemaInterno {
 
     fun entra(admin: Autenticavel, senha: Int) {

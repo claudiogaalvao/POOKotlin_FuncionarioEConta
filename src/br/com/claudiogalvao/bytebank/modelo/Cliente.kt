@@ -1,7 +1,10 @@
+package br.com.claudiogalvao.bytebank.modelo
+
 class Cliente(
-        val nome: String,
+        var nome: String,
         val cpf: String,
-        protected val senha: Int
+        protected val senha: Int,
+        var endereco: Endereco = Endereco()
 ) : Autenticavel {
 
     override fun autentica(senha: Int): Boolean {

@@ -1,3 +1,5 @@
+package br.com.claudiogalvao.bytebank.testes
+
 fun testaLacos() {
     var i = 0
     while (i < 5) {

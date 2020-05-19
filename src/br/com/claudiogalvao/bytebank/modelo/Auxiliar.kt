@@ -1,3 +1,5 @@
+package br.com.claudiogalvao.bytebank.modelo
+
 class Auxiliar(
         nome : String,
         cpf: String,

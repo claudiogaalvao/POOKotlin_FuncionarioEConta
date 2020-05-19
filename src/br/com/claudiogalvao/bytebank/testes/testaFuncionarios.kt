@@ -1,3 +1,10 @@
+package br.com.claudiogalvao.bytebank.testes
+
+import br.com.claudiogalvao.bytebank.modelo.Analista
+import br.com.claudiogalvao.bytebank.modelo.CalculadoraBonificacao
+import br.com.claudiogalvao.bytebank.modelo.Diretor
+import br.com.claudiogalvao.bytebank.modelo.Gerente
+
 fun testaFuncionarios() {
     val alex = Analista(
             "Alex",

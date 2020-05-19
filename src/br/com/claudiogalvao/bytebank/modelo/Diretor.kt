@@ -1,3 +1,5 @@
+package br.com.claudiogalvao.bytebank.modelo
+
 class Diretor(
         nome : String,
         cpf: String,

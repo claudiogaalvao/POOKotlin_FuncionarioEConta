@@ -1,3 +1,10 @@
+package br.com.claudiogalvao.bytebank.testes
+
+import br.com.claudiogalvao.bytebank.modelo.Cliente
+import br.com.claudiogalvao.bytebank.modelo.Diretor
+import br.com.claudiogalvao.bytebank.modelo.Gerente
+import br.com.claudiogalvao.bytebank.modelo.SistemaInterno
+
 fun testaInterfaceAutentica() {
     val gerente = Gerente(
             "Alex",
