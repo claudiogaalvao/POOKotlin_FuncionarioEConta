@@ -1,4 +1,4 @@
-package br.com.claudiogalvao.bytebank.testes
+package br.com.claudiogalvao.bytebank.teste
 
 import br.com.claudiogalvao.bytebank.modelo.Cliente
 import br.com.claudiogalvao.bytebank.modelo.Conta

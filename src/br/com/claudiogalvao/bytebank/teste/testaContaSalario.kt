@@ -1,4 +1,4 @@
-package br.com.claudiogalvao.bytebank.testes
+package br.com.claudiogalvao.bytebank.teste
 
 import br.com.claudiogalvao.bytebank.modelo.Cliente
 import br.com.claudiogalvao.bytebank.modelo.ContaCorrente
@@ -18,8 +18,8 @@ private fun testaContaSalario() {
     contaPoupanca.deposita(3000.0)
     contaSalario.deposita(1200.0)
 
-    contaPoupanca.transfere(1500.0, contaCorrente)
-    contaCorrente.transfere(500.0, contaPoupanca)
+    contaPoupanca.transfere(1500.0, contaCorrente, 1234)
+    contaCorrente.transfere(500.0, contaPoupanca, 1234)
 
     println("Saldo conta corrente ${contaCorrente.saldo}")
     println("Saldo conta poupanca ${contaPoupanca.saldo}")

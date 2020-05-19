@@ -1,4 +1,4 @@
-package br.com.claudiogalvao.bytebank.testes
+package br.com.claudiogalvao.bytebank.teste
 
 fun testaLacos() {
     var i = 0

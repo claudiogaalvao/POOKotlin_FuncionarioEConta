@@ -1,8 +1,11 @@
-package br.com.claudiogalvao.bytebank.testes
+package br.com.claudiogalvao.bytebank.teste
 
+import br.com.claudiogalvao.bytebank.exception.FalhaAutenticacaoException
+import br.com.claudiogalvao.bytebank.exception.SaldoInsuficienteException
 import br.com.claudiogalvao.bytebank.modelo.Cliente
 import br.com.claudiogalvao.bytebank.modelo.ContaCorrente
 import br.com.claudiogalvao.bytebank.modelo.ContaPoupanca
+import java.lang.Exception
 
 fun testaComportamentosConta() {
 
@@ -49,10 +52,18 @@ fun testaComportamentosConta() {
 
     println("Transferência da conta da Fran para o Alex")
 
-    if (contaFran.transfere(destino = contaAlex, valor = 300.0)) {
+    try {
+        contaFran.transfere(destino = contaAlex, valor = 300.0, senha = 1234)
         println("Transferência sucedida")
-    } else {
+    } catch (e: SaldoInsuficienteException) {
         println("Falha na transferência")
+        println("Saldo insuficiente")
+    } catch(e: FalhaAutenticacaoException) {
+        println("Falha na transferência")
+        println("Falha na autenticação")
+    } catch(e: Exception) {
+        println("Erro desconhecido")
+        e.printStackTrace()
     }
 
     println(contaAlex.saldo)

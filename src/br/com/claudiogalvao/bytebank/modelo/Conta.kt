@@ -1,5 +1,8 @@
 package br.com.claudiogalvao.bytebank.modelo
 
+import br.com.claudiogalvao.bytebank.exception.FalhaAutenticacaoException
+import br.com.claudiogalvao.bytebank.exception.SaldoInsuficienteException
+
 abstract class Conta(
     var titular: Cliente,
     val numero: Int
@@ -38,13 +41,16 @@ class ContaCorrente(
         }
     }
 
-    override fun transfere(valor: Double, destino: Conta): Boolean {
-        if (saldo >= valor) {
-            saldo -= valor
-            destino.deposita(valor)
-            return true
+    override fun transfere(valor: Double, destino: Conta, senha: Int) {
+        if(saldo < valor) {
+            throw SaldoInsuficienteException("Saldo insuficiente, saldo atual: $saldo, valor que tentou transferir: $valor")
         }
-        return false
+        if(!titular.autentica(senha)) {
+            throw FalhaAutenticacaoException()
+        }
+
+        saldo -= valor
+        destino.deposita(valor)
     }
 }
 
@@ -62,13 +68,16 @@ class ContaPoupanca(
         }
     }
 
-    override fun transfere(valor: Double, destino: Conta): Boolean {
-        if (saldo >= valor) {
-            saldo -= valor
-            destino.deposita(valor)
-            return true
+    override fun transfere(valor: Double, destino: Conta, senha: Int) {
+        if(saldo < valor) {
+            throw SaldoInsuficienteException("Saldo insuficiente, saldo atual: $saldo, valor que tentou transferir: $valor")
         }
-        return false
+        if(!titular.autentica(senha)) {
+            throw FalhaAutenticacaoException()
+        }
+
+        saldo -= valor
+        destino.deposita(valor)
     }
 }
 
